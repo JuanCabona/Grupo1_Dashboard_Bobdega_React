@@ -14,7 +14,7 @@ function LastMovie () {
               style={{ width: "40rem" }}
               src={Mandalorian} alt="Star Wars - Mandalorian" />
           </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
+          <p></p>
           <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
         </div>
       </div>

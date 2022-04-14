@@ -20,6 +20,7 @@ class App extends Component {
     super();
     this.state = {
       genresList: [],
+      usersList: [],
       isLoading: true
     }
   }
@@ -28,15 +29,20 @@ class App extends Component {
   componentDidMount () {
     console.log("¡El componente se montó!");
     // Aquí hacemos los llamados asincrónicos
-    fetch("http://localhost:5500/api/genres")
+    fetch("http://localhost:3001/api/users")
       .then(response => response.json())
       .then(data => {
+        console.log(data.users)
+        console.log(data.length)
         if (data.length > 0) {
           this.setState({
             isLoading: false,
-            genresList: data
+            genresList: data,
+            usersList: data.users,
           })
+          console.log(this.state.isLoading)
         }
+        
       })
       .catch(error => console.error(error))
   }
@@ -72,20 +78,17 @@ class App extends Component {
                 <Route path="/" exact={true}  >
                   <Home
                     genresList={this.state.genresList}
+                    usersList={this.state.usersList}
                     isLoading={this.state.isLoading}
                   /> 
                 </Route>
 
                 <Route path="/genres/:id" render={(props) => <GenreDetails {...props}  />} />
-
+                      
                 <Route path="/test">
                   <h2>Esto es un test</h2>
                 </Route>
-              
-                <Route path="/soy-javi">
-                  <h2>¡Hola soy Javi!</h2>
-                </Route>
-                
+                 
                 <Route>
                   <h3>¡Error 404!</h3>
                 </Route>
