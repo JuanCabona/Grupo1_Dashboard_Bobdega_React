@@ -1,6 +1,10 @@
 import MainBoxes from './MainBoxes';
 import LastMovie from './LastMovie';
 import Genres from './Genres';
+import Nav from './Nav';
+
+
+
 
 const Home = ({ isLoading, genresList }) => {
   return (
@@ -10,7 +14,10 @@ const Home = ({ isLoading, genresList }) => {
         <LastMovie />
         {isLoading && <h3>Cargando...</h3>}
         {!isLoading && <Genres genresList={genresList} />}
+        
       </div>
+      
+      
     </>
   )
 }

@@ -15,59 +15,50 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import GenreDetails from './components/GenreDetails';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      genresList: [],
-      isLoading: true
-    }
-  }
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       genresList: [],
+//       isLoading: true
+//     }
+//   }
 
   // Life Cycle
-  componentDidMount () {
-    console.log("¡El componente se montó!");
-    // Aquí hacemos los llamados asincrónicos
-    fetch("http://localhost:5500/api/genres")
-      .then(response => response.json())
-      .then(data => {
-        if (data.length > 0) {
-          this.setState({
-            isLoading: false,
-            genresList: data
-          })
-        }
-      })
-      .catch(error => console.error(error))
-  }
+  // componentDidMount () {
+  //   console.log("¡El componente se montó!");
+  //   // Aquí hacemos los llamados asincrónicos
+  //   fetch("http://localhost:5500/api/genres")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       if (data.length > 0) {
+  //         this.setState({
+  //           isLoading: false,
+  //           genresList: data
+  //         })
+  //       }
+  //     })
+  //     .catch(error => console.error(error))
+  // }
 
-  // Event Handler
-  loadingIsTrueAgain () {
-    this.setState({
-      isLoading: !this.state.isLoading
-    })
-  }
+  // // Event Handler
+  // loadingIsTrueAgain () {
+  //   this.setState({
+  //     isLoading: !this.state.isLoading
+  //   })
+  // }
 
   render () {
+    //esta es la estructura visual
     return (
       <div id="wrapper">
         <Sidenav />
         <Layout>
-          <Nav />
+        <Nav />
           <div className="container-fluid">
 
             <div id="content">
 
-              {/* 
-                <Route path="/" exact={true} component={Home} />
-                De esta manera podemos renderizar el componente cuando la ruta machea pero no le podemos pasar props
-              */}
-
-              {/* 
-                <Route path="/" exact={true} render={() => <Home genresList={this.state.genresList} isLoading={this.state.isLoading} />} /> 
-                De esta manera podemos renderizar un componente pasando sus props, la prop render debe ser una arrow fn
-              */}
-              
               <Switch>
                 <Route path="/" exact={true}  >
                   <Home

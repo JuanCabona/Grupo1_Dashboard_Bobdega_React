@@ -1,22 +1,24 @@
 import MainBox from "./MainBox";
 
 function MainBoxes({ loadingHandler }) {
-  const dataBoxes = [
+  
+  
+  let dataBoxes = [
     {
-      title: "Movies in data base",
+      title: "Total de Productos",
       amount: 21,
       iconName: "fa-film",
       styles: ["border-left-primary", "text-primary"]
     },
     {
-      title: "Total awards",
+      title: "Total de Usuarios",
       amount: 79,
       iconName: "fa-award",
       styles: ["border-left-success", "text-success"]
     },
     {
-      title: "Actors quantity",
-      amount: 49,
+      title: "Total de Categorias",
+      amount: 5,
       iconName: "fa-user",
       styles: ["border-left-warning", "text-warning"]
     }
