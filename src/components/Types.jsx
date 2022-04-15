@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+
+
+//poner el fetch
+
+
 function Genres({ genresList }) {
   return (
     <div className="col-lg-6 mb-4">

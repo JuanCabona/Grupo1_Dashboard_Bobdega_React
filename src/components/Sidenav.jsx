@@ -33,13 +33,7 @@ function Sidenav (props) {
       <li className="nav-item active">
         <Link to="/genres/1" className="nav-link">
           <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Genre con ID: 1</span>
-        </Link>
-      </li>
-      <li className="nav-item active">
-        <Link to="/soy-javi" className="nav-link">
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Conoce a Javi</span>
+          <span>Producto con ID: 1</span>
         </Link>
       </li>
 

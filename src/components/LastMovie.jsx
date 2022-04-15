@@ -11,7 +11,7 @@ function LastMovie () {
           <div className="text-center">
           <h2>Last product</h2>
           </div>
-          <p>descripion producto</p>
+          <p></p>
           <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
         </div>
       </div>
