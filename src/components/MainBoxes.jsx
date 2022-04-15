@@ -1,18 +1,23 @@
 import MainBox from "./MainBox";
+import { useState } from 'react';
 
-function MainBoxes({ loadingHandler }) {
+function MainBoxes({ loadingHandler, productos, usuarios }) {
   
+  const [ amountProd, setAmountProd ] = useState ( productos );
+  let cantProd = amountProd.length;
+
+    
   
   let dataBoxes = [
     {
       title: "Total de Productos",
-      amount: 21,
+      amount: productos,
       iconName: "fa-film",
       styles: ["border-left-primary", "text-primary"]
     },
     {
       title: "Total de Usuarios",
-      amount: 79,
+      amount: usuarios,
       iconName: "fa-award",
       styles: ["border-left-success", "text-success"]
     },
@@ -37,10 +42,7 @@ function MainBoxes({ loadingHandler }) {
         
       </div>
 
-      <button
-        className="btn btn-danger my-5"
-        onClick={loadingHandler}
-      >Haceme Click</button>
+      
     </>
   )
 }
