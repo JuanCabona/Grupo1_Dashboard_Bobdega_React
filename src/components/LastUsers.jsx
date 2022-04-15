@@ -33,7 +33,7 @@ function LastUser (lastProduct) {
           <h2>  {lastUser.name} </h2>
           </div>
           <p></p>
-          <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle del Usuario</a>
+          <a className="btn btn-danger" target="_blank"   href={ "/userDetail/" + lastUser.id}>Ver detalle del Usuario</a>
         </div>
       </div>
     </div>

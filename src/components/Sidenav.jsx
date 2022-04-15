@@ -19,28 +19,7 @@ function Sidenav (props) {
           <span>Home</span>
         </Link>
       </li>
-
-      <li className="nav-item active">
-        <a className="nav-link" href="/">
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard - DH movies</span></a>
-      </li>
-
-      
-      <li className="nav-item active">
-        <Link to="/test" className="nav-link">
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Test</span>
-        </Link>
-      </li>
-      <li className="nav-item active">
-        <Link to="/genres/1" className="nav-link">
-          <i className="fas fa-fw fa-tachometer-alt"></i>
-          <span>Producto con ID: 1</span>
-        </Link>
-      </li>
-
-      
+            
     </ul>
   )
 }

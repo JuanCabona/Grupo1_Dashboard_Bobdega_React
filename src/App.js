@@ -18,6 +18,8 @@ import Sidenav from './components/Sidenav';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import GenreDetails from './components/GenreDetails';
+import ProductDetail from './components/ProductDetail';
+import UserDetail from './components/UserDetail';
 
 // consumir api
 
@@ -69,12 +71,21 @@ function App() {
       <Layout> 
       <Nav /> 
         
-      <div className='container-fluid'>                             
+      
+              <Switch>
+                <Route path="/productDetail/:id" component={ProductDetail} />
+                <Route path="/" exact={true}>
+                <div className='container-fluid'>                             
                 <Home productos={cantidadProd} usuarios={cantidadUsers} />
-      </div>
+                </div>
+                </Route>
+                <Route path="/userDetail" component={UserDetail} />
+              </Switch>
       </Layout> 
     </div>
     
+    
+
   )
 }
 

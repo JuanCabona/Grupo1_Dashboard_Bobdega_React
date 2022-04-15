@@ -14,7 +14,7 @@ function LastProduct (lastProduct) {
           .then (res => { 
             let indice = res.data.products.length-1;
             ultimoProducto = res.data.products[indice];
-            console.log(ultimoProducto);
+            console.log("ID:", ultimoProducto.id);
                                              
           })
           .catch(Error)
@@ -33,7 +33,8 @@ function LastProduct (lastProduct) {
           <h2>  {ultimoProducto.name} </h2>
           </div>
           <p></p>
-          <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle del Producto </a>
+          <a className="btn btn-danger" target="_blank" href={ "/productDetail/" + ultimoProducto.id}>Ver detalle del Producto </a>
+       
         </div>
       </div>
     </div>
