@@ -36,12 +36,12 @@ function LastUser () {
           
           {isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
-                  </div>: <h3>  {"nombre: " + lastUser.name}</h3>  }
+                  </div>: <h5>  {"nombre: " + lastUser.name}</h5>  }
 
                   
                   {isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
-                  </div>: <h3>  {"Email: " + lastUser.email}</h3>  }
+                  </div>: <h5>  {"Email: " + lastUser.email}</h5>  }
           
           
          

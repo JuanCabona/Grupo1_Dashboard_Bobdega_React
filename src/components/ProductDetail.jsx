@@ -30,10 +30,10 @@ let url= "/api/products/" + id;
        { isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
                   </div> : <div>
-        <h3>Nombre: {ultimoProducto.name} </h3>
-        <h3>Precio: {ultimoProducto.price} </h3>
-        <h3>Alcohol: {ultimoProducto.alcohol} </h3>
-        <h3>Descripcion: {ultimoProducto.description} </h3>
+        <h4>Nombre: {ultimoProducto.name} </h4>
+        <h6>Precio: {ultimoProducto.price} </h6>
+        <h6>Alcohol: {ultimoProducto.alcohol} </h6>
+        <h6>Descripcion: {ultimoProducto.description} </h6>
     </div>}
      </>
         

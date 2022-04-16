@@ -34,11 +34,11 @@ const [ isLoading, setIsLoading ] = useState ( true );
           <div className="text-center">
           {isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
-                  </div>: <h3>  {ultimoProducto.name} </h3> }
+                  </div>: <h5>  {ultimoProducto.name} </h5> }
           
           {isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
-                  </div>: <h3>  {ultimoProducto.price} </h3> }
+                  </div>: <h6>  {ultimoProducto.description} </h6> }
           </div>
           <p></p>
           <Link to={ "/productDetail/" + ultimoProducto.id} className="btn btn-danger">Ver detalle del Producto</Link>  
