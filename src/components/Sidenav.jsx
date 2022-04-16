@@ -19,6 +19,7 @@ function Sidenav (props) {
           <span>Home</span>
         </Link>
       </li>
+      
             
     </ul>
   )
