@@ -4,7 +4,7 @@ import {useEffect} from "react";
 
 let lastUser= {};
 
-function LastUser (lastProduct) {
+function LastUser () {
 
 
 
@@ -30,7 +30,7 @@ function LastUser (lastProduct) {
         </div>
         <div className="card-body">
           <div className="text-center">
-          <h2>  {lastUser.name} </h2>
+          <h2>  {lastUser.name}   </h2>
           </div>
           <p></p>
           <a className="btn btn-danger" target="_blank"   href={ "/userDetail/" + lastUser.id}>Ver detalle del Usuario</a>

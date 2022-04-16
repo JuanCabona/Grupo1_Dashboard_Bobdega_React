@@ -17,7 +17,7 @@ import Layout from './layout/Wrapper';
 import Sidenav from './components/Sidenav';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import GenreDetails from './components/GenreDetails';
+
 import ProductDetail from './components/ProductDetail';
 import UserDetail from './components/UserDetail';
 
@@ -79,7 +79,7 @@ function App() {
                 <Home productos={cantidadProd} usuarios={cantidadUsers} />
                 </div>
                 </Route>
-                <Route path="/userDetail" component={UserDetail} />
+                <Route path="/userDetail/:id" component={UserDetail} />
               </Switch>
       </Layout> 
     </div>
