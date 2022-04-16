@@ -16,7 +16,7 @@ function ProductsList() {
             .then (res => {
                 setPosts(res.data.products);
                 setIsLoading(false);
-                console.log(res);
+                console.log(res.data.meta.countByCategory.tintos);
             })
             .catch(Error)
     }, [])

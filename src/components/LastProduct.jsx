@@ -35,6 +35,10 @@ const [ isLoading, setIsLoading ] = useState ( true );
           {isLoading ? <div class="spinner-border m-5" role="status">
                   <span class="sr-only">Loading...</span>
                   </div>: <h3>  {ultimoProducto.name} </h3> }
+          
+          {isLoading ? <div class="spinner-border m-5" role="status">
+                  <span class="sr-only">Loading...</span>
+                  </div>: <h3>  {ultimoProducto.price} </h3> }
           </div>
           <p></p>
           <Link to={ "/productDetail/" + ultimoProducto.id} className="btn btn-danger">Ver detalle del Producto</Link>  

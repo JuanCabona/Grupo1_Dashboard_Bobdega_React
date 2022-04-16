@@ -2,6 +2,9 @@ import MainBoxes from './MainBoxes';
 import LastProduct from './LastProduct';
 import ProductsList from './ProductsList';
 import LastUser from './LastUsers';
+import CountTypes from './CountTypes';
+
+
 
 
 
@@ -14,10 +17,11 @@ const Home = ({ isLoading,  genresList, usersList, productos, usuarios }) => {
       
              
         <LastProduct />
+        <LastUser />
           
         <ProductsList />
+        <CountTypes/>
 
-        <LastUser />
         
        
       </div>
