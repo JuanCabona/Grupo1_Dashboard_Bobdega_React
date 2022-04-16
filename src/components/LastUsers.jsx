@@ -1,12 +1,12 @@
 
 import axios from "axios";
-import {useEffect} from "react";
-
+import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 let lastUser= {};
 
 function LastUser () {
 
-
+  const [ isLoading, setIsLoading ] = useState ( true );
 
   useEffect(()=>{
     
@@ -14,6 +14,9 @@ function LastUser () {
           .then (res => { 
             let indice = res.data.users.length-1;
             lastUser = res.data.users[indice];
+            setIsLoading(false);
+            
+     
       
                                              
           })
@@ -30,10 +33,21 @@ function LastUser () {
         </div>
         <div className="card-body">
           <div className="text-center">
-          <h2>  {lastUser.name}   </h2>
+          
+          {isLoading ? <div class="spinner-border m-5" role="status">
+                  <span class="sr-only">Loading...</span>
+                  </div>: <h3>  {"nombre: " + lastUser.name}</h3>  }
+
+                  
+                  {isLoading ? <div class="spinner-border m-5" role="status">
+                  <span class="sr-only">Loading...</span>
+                  </div>: <h3>  {"Email: " + lastUser.email}</h3>  }
+          
+          
+         
           </div>
           <p></p>
-          <a className="btn btn-danger" target="_blank"   href={ "/userDetail/" + lastUser.id}>Ver detalle del Usuario</a>
+          <Link to={ "/userDetail/" + lastUser.id} className="btn btn-danger">Ver detalle del Usuario</Link>
         </div>
       </div>
     </div>

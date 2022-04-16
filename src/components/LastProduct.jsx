@@ -1,12 +1,14 @@
 
 import axios from "axios";
-import {useEffect} from "react";
+import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+
 
 let ultimoProducto= {};
 
 function LastProduct (lastProduct) {
 
-
+const [ isLoading, setIsLoading ] = useState ( true );
 
   useEffect(()=>{
     
@@ -14,7 +16,7 @@ function LastProduct (lastProduct) {
           .then (res => { 
             let indice = res.data.products.length-1;
             ultimoProducto = res.data.products[indice];
-            console.log("ID:", ultimoProducto.id);
+            setIsLoading(false);
                                              
           })
           .catch(Error)
@@ -30,11 +32,12 @@ function LastProduct (lastProduct) {
         </div>
         <div className="card-body">
           <div className="text-center">
-          <h2>  {ultimoProducto.name} </h2>
+          {isLoading ? <div class="spinner-border m-5" role="status">
+                  <span class="sr-only">Loading...</span>
+                  </div>: <h3>  {ultimoProducto.name} </h3> }
           </div>
           <p></p>
-          <a className="btn btn-danger" target="_blank" href={ "/productDetail/" + ultimoProducto.id}>Ver detalle del Producto </a>
-       
+          <Link to={ "/productDetail/" + ultimoProducto.id} className="btn btn-danger">Ver detalle del Producto</Link>  
         </div>
       </div>
     </div>
