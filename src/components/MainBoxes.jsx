@@ -12,19 +12,17 @@ function MainBoxes({ loadingHandler, productos, usuarios }) {
     {
       title: "Total de Productos",
       amount: productos,
-      iconName: "fa-film",
+      
       styles: ["border-left-primary", "text-primary"]
     },
     {
       title: "Total de Usuarios",
       amount: usuarios,
-      iconName: "fa-award",
       styles: ["border-left-success", "text-success"]
     },
     {
       title: "Total de Categorias",
       amount: 5,
-      iconName: "fa-user",
       styles: ["border-left-warning", "text-warning"]
     }
   ];
