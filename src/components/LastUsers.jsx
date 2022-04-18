@@ -6,14 +6,14 @@ let lastUser= {};
 
 function LastUser () {
 
-  const [ isLoading, setIsLoading ] = useState ( true );
+    const [ isLoading, setIsLoading ] = useState ( true );  /*aplicacion de isLoading */
 
   useEffect(()=>{
     
        axios.get("/api/users")
-          .then (res => { 
+          .then (res => {                         /** seteamos que valores recibe al momento de cargarse*/
             let indice = res.data.users.length-1;
-            lastUser = res.data.users[indice];
+            lastUser = res.data.users[indice]; 
             setIsLoading(false);
             
      
@@ -21,7 +21,7 @@ function LastUser () {
                                              
           })
           .catch(Error)
-  }, [])
+  }, []) /**ponemos un array vacio para definir el uso cuando se actualiza */
 
 
 
@@ -34,14 +34,14 @@ function LastUser () {
         <div className="card-body">
           <div className="text-center">
           
-          {isLoading ? <div class="spinner-border m-5" role="status">
+          {isLoading ? <div class="spinner-border m-5" role="status">{ /** condicion si isLoadin es true */}
                   <span class="sr-only">Loading...</span>
-                  </div>: <h5>  {"nombre: " + lastUser.name}</h5>  }
+                  </div>: <h5>  {"nombre: " + lastUser.name}</h5>  }{/** se cierra aca la condicion*/}
 
                   
-                  {isLoading ? <div class="spinner-border m-5" role="status">
+                  {isLoading ? <div class="spinner-border m-5" role="status">{ /** condicion si isLoadin es true */}
                   <span class="sr-only">Loading...</span>
-                  </div>: <h5>  {"Email: " + lastUser.email}</h5>  }
+                  </div>: <h5>  {"Email: " + lastUser.email}</h5>  }{/** se cierra aca la condicion*/}
           
           
          

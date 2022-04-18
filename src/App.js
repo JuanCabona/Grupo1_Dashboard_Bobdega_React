@@ -30,7 +30,7 @@ let cantidadUsers = 0;
 function App() {
 
         const [ usuarios, setUsuarios ] = useState([]);
-        const [ isLoading, setIsLoading ] = useState(true);
+        const [ isLoading, setIsLoading ] = useState(true);   /*aplicacion de isLoading */
         
         const [ prod, setprod ] = useState([1]);
         const [ isLoadingProd, setIsLoadingProd ] = useState(true);
@@ -39,7 +39,7 @@ function App() {
         
         useEffect(()=>{
           axios.get("/api/users")
-                .then (res => {
+                .then (res => {                      /** seteamos que valores recibe al momento de cargarse*/
                     setUsuarios(res.data.users);
                     setIsLoading(false);
                     cantidadUsers = res.data.users.length;
@@ -49,7 +49,7 @@ function App() {
                 .catch(Error)
 
            axios.get("/api/products")
-                .then (res => { 
+                .then (res => {                         /** seteamos que valores recibe al momento de cargarse*/
                    cantidadProd = res.data.products.length;
                     setprod(res.data.products);
                     setIsLoadingProd(false);
@@ -59,7 +59,7 @@ function App() {
                     
                 })
                 .catch(Error)
-        }, [])
+        }, [])  /**ponemos un array vacio para definir el uso cuando se actualiza */
 
   
 
@@ -68,20 +68,22 @@ function App() {
     <div id="wrapper" >
         <Sidenav  />
         
-      <Layout> 
-      <Nav /> 
-        
-      
-              <Switch>
-                <Route path="/productDetail/:id" component={ProductDetail} />
-                <Route path="/" exact={true}>
-                <div className='container-fluid'>                             
-                <Home productos={cantidadProd} usuarios={cantidadUsers} />
-                </div>
-                </Route>
-                <Route path="/userDetail/:id" component={UserDetail} />
-              </Switch>
-      </Layout> 
+            <Layout> 
+                    <Nav /> 
+              
+            
+                    <Switch>
+                      <Route path="/" exact={true}>   {/*ruta especifida de home*/}
+                      <div className='container-fluid'>                             
+                      <Home productos={cantidadProd} usuarios={cantidadUsers} />
+                      </div>
+                      </Route>
+
+                      <Route path="/productDetail/:id" component={ProductDetail} />   {/* ruta detalle de producto*/}
+                      
+                      <Route path="/userDetail/:id" component={UserDetail} />     {/* ruta detalle de usuario*/}
+                    </Switch>
+            </Layout> 
     </div>
     
     

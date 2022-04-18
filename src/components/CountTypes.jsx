@@ -1,33 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
+
+
+
 function CountTypes() {
 
     
-    const [ posts, setPosts ] = useState([]);
-    const [ isLoading, setIsLoading ] = useState ( true );
+    const [ posts, setPosts ] = useState([]);  /* valor inicial de posts*/ 
+    const [ isLoading, setIsLoading ] = useState ( true );  /*aplicacion de isLoading */
   
     useEffect(()=>{
-        axios.get("/api/products")
+        axios.get("/api/products")  
             .then (res => {
-                setPosts(res.data.meta.countByCategory);
-                console.log(res.data.meta.countByCategory);
+                setPosts(res.data.meta.countByCategory);   /** seteamos que valores recibe al momento de cargarse*/
                 setIsLoading(false);
             })
             .catch(Error)
-    }, [])
+    }, [])   /**ponemos un array vacio para definir el uso cuando se actualiza */ 
 
   
     return (
 
-    <>
-    
-
-    {isLoading ? <div class="spinner-border m-5" role="status">
-                  <span class="sr-only">Loading...</span>
+    <>  
+    {isLoading ? <div class="spinner-border m-5" role="status">     { /** condicion si isLoadin es true */}
                   </div>: <div className="col-lg-6 mb-4">
-        <div className="card shadow mb-4">
-          <div className="card-header py-3">
+        <div className="card shadow mb-4">               {/**renderizacion tabla de cantidad por categorias */}
+          <div className="card-header py-3">                                            
             <h5 className="m-0 font-weight-bold text-gray-800">Cantidad Prod por Categoria</h5>
           </div>
           <div className="card-body">
@@ -44,11 +44,8 @@ function CountTypes() {
             
           </div>
         </div>
-      </div> }
-
-
-    
-    
+      </div> } {/** se cierra aca la condicion*/}
+   
     </>
 
         

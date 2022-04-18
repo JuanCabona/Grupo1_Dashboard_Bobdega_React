@@ -1,26 +1,26 @@
 
 import axios from "axios";
 import { Link } from 'react-router-dom'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';   /** importacion de hooks axios y react */
 
 
 let ultimoProducto= {};
 
 function LastProduct (lastProduct) {
-
-const [ isLoading, setIsLoading ] = useState ( true );
+{/** se cierra aca la condicion*/} 
+  const [ isLoading, setIsLoading ] = useState ( true );  /*aplicacion de isLoading */
 
   useEffect(()=>{
     
        axios.get("/api/products")
-          .then (res => { 
+          .then (res => {                              /** seteamos que valores recibe al momento de cargarse*/
             let indice = res.data.products.length-1;
             ultimoProducto = res.data.products[indice];
             setIsLoading(false);
                                              
           })
           .catch(Error)
-  }, [])
+  }, [])   /**ponemos un array vacio para definir el uso cuando se actualiza */ 
 
 
 
@@ -32,13 +32,13 @@ const [ isLoading, setIsLoading ] = useState ( true );
         </div>
         <div className="card-body">
           <div className="text-center">
-          {isLoading ? <div class="spinner-border m-5" role="status">
-                  <span class="sr-only">Loading...</span>
-                  </div>: <h5>  {ultimoProducto.name} </h5> }
+          {isLoading ? <div class="spinner-border m-5" role="status"> { /** condicion si isLoadin es true */}
+                  
+                  </div>: <h5>  {ultimoProducto.name} </h5> }{/** se cierra aca la condicion*/}
           
-          {isLoading ? <div class="spinner-border m-5" role="status">
+          {isLoading ? <div class="spinner-border m-5" role="status">{ /** condicion si isLoadin es true */}
                   <span class="sr-only">Loading...</span>
-                  </div>: <h6>  {ultimoProducto.description} </h6> }
+                  </div>: <h6>  {ultimoProducto.description} </h6> }{/** se cierra aca la condicion*/}
           </div>
           <p></p>
           <Link to={ "/productDetail/" + ultimoProducto.id} className="btn btn-danger">Ver detalle del Producto</Link>  
