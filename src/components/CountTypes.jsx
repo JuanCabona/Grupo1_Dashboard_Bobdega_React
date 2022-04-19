@@ -8,13 +8,13 @@ import axios from 'axios';
 function CountTypes() {
 
     
-    const [ posts, setPosts ] = useState([]);  /* valor inicial de posts*/ 
+    const [ category, setCategory ] = useState([]);  /* valor inicial de posts*/ 
     const [ isLoading, setIsLoading ] = useState ( true );  /*aplicacion de isLoading */
   
     useEffect(()=>{
         axios.get("/api/products")  
             .then (res => {
-                setPosts(res.data.meta.countByCategory);   /** seteamos que valores recibe al momento de cargarse*/
+                setCategory(res.data.countByCategory);   /** seteamos que valores recibe al momento de cargarse*/
                 setIsLoading(false);
             })
             .catch(Error)
@@ -33,11 +33,11 @@ function CountTypes() {
           <div className="card-body">
             <div className="text-center">
                 
-              <h5> {"Espumantes: " + posts.espumantes} </h5>
-              <h5> {"Tintos: " + posts.tintos} </h5>
-              <h5> {"Blancos: " + posts.blancos} </h5>
-              <h5> {"Rosados: " + posts.rosados} </h5>
-              <h5> {"Regalos: " + posts.regalos} </h5>
+              <h5> {"Espumantes: " + category.espumantes} </h5>
+              <h5> {"Tintos: " + category.tintos} </h5>
+              <h5> {"Blancos: " + category.blancos} </h5>
+              <h5> {"Rosados: " + category.rosados} </h5>
+              <h5> {"Regalos: " + category.regalos} </h5>
               
             </div>
             <p></p>

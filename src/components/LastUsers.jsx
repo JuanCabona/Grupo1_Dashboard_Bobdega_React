@@ -36,7 +36,7 @@ function LastUser () {
           
           {isLoading ? <div class="spinner-border m-5" role="status">{ /** condicion si isLoadin es true */}
                   <span class="sr-only">Loading...</span>
-                  </div>: <h5>  {"nombre: " + lastUser.name}</h5>  }{/** se cierra aca la condicion*/}
+                  </div>: <h5>  {"Nombre: " + lastUser.name}</h5>  }{/** se cierra aca la condicion*/}
 
                   
                   {isLoading ? <div class="spinner-border m-5" role="status">{ /** condicion si isLoadin es true */}
