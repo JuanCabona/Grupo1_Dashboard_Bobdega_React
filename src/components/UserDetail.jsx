@@ -8,8 +8,7 @@ function UserDetail(id) {
 
  
     const [ isLoading, setIsLoading ] = useState ( true );  /*aplicacion de isLoading */
-    const [ url, setUrl ] = useState (id);
-
+    
 let urlUser= "/api/users/" + id.match.params.id;
 
 useEffect(()=>{
@@ -33,6 +32,10 @@ useEffect(()=>{
         <h6>Nombre: {ultimoUsuario.name} </h6>
         <h6>Apellido: {ultimoUsuario.lastname}</h6>
         <h6>Email: {ultimoUsuario.email}</h6>
+        <h6>Imagen: {ultimoUsuario.image}</h6>
+        <img src={ultimoUsuario.image} alt="imagen de usuario" /><br></br>
+        
+        <a href={ultimoUsuario.image}>Imagen</a>
     </div>}{/** se cierra aca la condicion*/}
     </>
 

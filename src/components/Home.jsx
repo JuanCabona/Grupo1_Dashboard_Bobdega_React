@@ -17,15 +17,11 @@ const Home = ({ productos, usuarios }) => {
       
              
         <LastProduct />
-
-        <LastUser />
-          
-        <ProductsList />
-
         <CountTypes/>
+        <LastUser />
 
-        
-       
+
+
       </div>
 
       

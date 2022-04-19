@@ -27,19 +27,14 @@ function ProductsList() {
     
 return (
   <div className="col-lg-6 mb-4">
-  <div className="card shadow mb-4">
-    <div className="card-header py-3">
-      <h5 className="m-0 font-weight-bold text-gray-800">Todos los Productos </h5>
-    </div>
+    <h2>Todos los productos</h2>
     <div className="card-body">
       <div className="row">
         
-        <ul>
-          
-          
+        <ul>          
               {isLoading ? <div class="spinner-border m-5" role="status">
-                  </div> : products.map( post => 
-           <li key={post.id}><Link to={"/productDetail/" + post.id } className="nav-link" >{post.name}</Link></li>
+                  </div> : products.map( products => 
+           <li key={products.id}><Link to={"/productDetail/" + products.id } className="nav-link" >{products.name}</Link></li>
            
             )}
 
@@ -50,8 +45,8 @@ return (
         </ul>
       </div>
     </div>
+  
   </div>
-</div>
     
   )
 }

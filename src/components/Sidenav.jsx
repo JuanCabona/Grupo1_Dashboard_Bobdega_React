@@ -19,6 +19,20 @@ function Sidenav (props) {
           <span>Home</span>
         </Link>
       </li>
+
+      <li className="nav-item active">
+        <Link to="/productList/:id" className="nav-link" >
+          <i className="fas fa-fw fa-tachometer-alt"></i>
+          <span>Todos los productos</span>
+        </Link>
+      </li>
+
+      <li className="nav-item active">
+        <Link to="/usersList/:id" className="nav-link" >
+          <i className="fas fa-fw fa-tachometer-alt"></i>
+          <span>Todos los usuarios</span>
+        </Link>
+      </li>
       
             
     </ul>

@@ -20,6 +20,8 @@ import Home from './components/Home';
 
 import ProductDetail from './components/ProductDetail';
 import UserDetail from './components/UserDetail';
+import ProductList from './components/ProductsList';
+import UsersList from './components/UsersList'
 
 // consumir api
 
@@ -82,6 +84,11 @@ function App() {
                       <Route path="/productDetail/:id" component={ProductDetail} />   {/* ruta detalle de producto*/}
                       
                       <Route path="/userDetail/:id" component={UserDetail} />     {/* ruta detalle de usuario*/}
+
+                      <Route path="/productList/:id" component={ProductList} />
+
+                      <Route path="/usersList/:id" component={UsersList} />
+                      
                     </Switch>
             </Layout> 
     </div>
